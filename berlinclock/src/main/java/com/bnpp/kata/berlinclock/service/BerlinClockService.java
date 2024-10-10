@@ -12,9 +12,14 @@ public class BerlinClockService {
 
 		String result = (Integer.parseInt(time.getSeconds()) % 2 == 0) ? "Y" : "O";
 
+		DetailedBerlinTime detailedBerlinTime = DetailedBerlinTime.builder()
+				.secondsLamp(result)
+				.topFiveHourLamps("OOOO")
+				.build();
+
 		return BerlinClockResponse.builder()
 				.digitalTime(null)
-				.detailedBerlinTime(DetailedBerlinTime.builder().topFiveHourLamps("OOOO").build())
+				.detailedBerlinTime(detailedBerlinTime)
 				.berlinTime(result)
 				.build();
 	}
