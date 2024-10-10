@@ -4,8 +4,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BerlinClockService {
-    
-    public String convertToBerlinTime(String time) {
-        return "Y";
-    }
+
+	public String convertToBerlinTime(String time) {
+
+		String result = null;
+		if (Integer.parseInt(time) % 2 == 0)
+			result = "Y";
+		else
+			result = "O";
+		return result;
+	}
 }

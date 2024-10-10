@@ -18,8 +18,17 @@ public class BerlinClockServiceTest {
     @DisplayName("Seconds Lamp : should be ON for even seconds")
     public void convertToBerlinTime_passEvenSeconds_secondsLampShouldBeON() {
 
-        String result = berlinClockService.convertToBerlinTime("00:00:02");
+        String result = berlinClockService.convertToBerlinTime("02");
 
         assertThat(result).isEqualTo("Y");
+    }
+
+    @Test
+    @DisplayName("Seconds Lamp in Berlin Clock should be OFF for odd seconds")
+    public void convertToBerlinTime_passOddSeconds_secondsLampShouldBeOFF() {
+
+        String result = berlinClockService.convertToBerlinTime("05");
+
+        assertThat(result).isEqualTo("O");
     }
 }
