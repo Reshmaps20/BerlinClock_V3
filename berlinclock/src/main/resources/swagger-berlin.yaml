@@ -41,7 +41,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
-    TimeInput:
+    TimeComponent:
       type: object
       required:
         - hours
@@ -91,4 +91,4 @@ components:
       type: object
       properties:
         time:
-          $ref: '#/components/schemas/TimeInput'
+          $ref: '#/components/schemas/TimeComponent'
