@@ -1,6 +1,7 @@
 package com.bnpp.kata.berlinclock.service;
 
 import com.bnpp.kataexam.berlinclock.model.BerlinClockResponse;
+import com.bnpp.kataexam.berlinclock.model.DetailedBerlinTime;
 import com.bnpp.kataexam.berlinclock.model.TimeComponent;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,7 @@ public class BerlinClockService {
 
 		return BerlinClockResponse.builder()
 				.digitalTime(null)
-				.detailedBerlinTime(null)
+				.detailedBerlinTime(DetailedBerlinTime.builder().topFiveHourLamps("OOOO").build())
 				.berlinTime(result)
 				.build();
 	}
